@@ -1,0 +1,8 @@
+server:
+  port:8888
+
+test:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.94.107.21:3306/test
+    username: kmtest
+    password: Km!123456

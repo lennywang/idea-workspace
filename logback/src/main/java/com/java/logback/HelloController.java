@@ -18,4 +18,11 @@ public class HelloController {
     public String say(){
         return "hello";
     }
+
+    @ApiOperation("Hello2")
+    @ResponseBody
+    @RequestMapping(value = "/hello2",method = RequestMethod.GET)
+    public String say2(){
+        return "hello";
+    }
 }
