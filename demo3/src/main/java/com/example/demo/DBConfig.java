@@ -1,24 +1,16 @@
+package com.example.demo;
+
 import com.jolbox.bonecp.BoneCPDataSource;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 import org.flywaydb.core.Flyway;
-
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.SQLFeatureNotSupportedException;
-import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Value;
-
-import com.jolbox.bonecp.BoneCP;
-import com.jolbox.bonecp.BoneCPConfig;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
-
+@Component
 public class DBConfig {
-
     @Value("${jdbc.url}")
     private String jdbcUrl;
 
@@ -31,19 +23,28 @@ public class DBConfig {
     @Value("${jdbc.password}")
     private String jdbcPassword;
 
-    @Bean(name = "datasourceKm")
-    @Primary
-    @ConfigurationProperties(prefix = "datasource.km")
+    @Bean
+    //@Primary
+    //@ConfigurationProperties(prefix = "datasource.km")
+    //@Bean
     public DataSource dataSource() {
         BoneCPDataSource boneCPDataSource = new BoneCPDataSource();
         // 数据库驱动
-        boneCPDataSource.setDriverClass(jdbcDriverClassName);
+        //        boneCPDataSource.setDriverClass(jdbcDriverClassName);
         // 相应驱动的jdbcUrl
-        boneCPDataSource.setJdbcUrl(jdbcUrl);
+        //        boneCPDataSource.setJdbcUrl(jdbcUrl);
         // 数据库的用户名
-        boneCPDataSource.setUsername(jdbcUsername);
+        //        boneCPDataSource.setUsername(jdbcUsername);
         // 数据库的密码
-        boneCPDataSource.setPassword(jdbcUsername);
+        //        boneCPDataSource.setPassword(jdbcPassword);
+        System.out.println(jdbcDriverClassName);
+        System.out.println(jdbcUrl);
+        System.out.println(jdbcUsername);
+        System.out.println(jdbcPassword);
+        boneCPDataSource.setDriverClass("com.mysql.jdbc.Driver");
+        boneCPDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+        boneCPDataSource.setUsername("root");
+        boneCPDataSource.setPassword("wll0913");
         // 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
         boneCPDataSource.setIdleConnectionTestPeriodInMinutes(60);
         // 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
@@ -56,13 +57,17 @@ public class DBConfig {
         return boneCPDataSource;
     }
 
-    @Bean(name = "KmMigration", initMethod = "migrate")
+    //@Bean(name = "KmMigration", initMethod = "migrate")
+
+    @Bean
     public Flyway flyway() throws SQLException {
+        System.out.println("flyway 1");
         //logger.info(("================= start km db migration ================="));
         Flyway flyway = new Flyway();
-        DataSource dataSource=dataSource();
+        DataSource dataSource = dataSource();
 
         flyway.setDataSource(dataSource); // instance of your datasource
+        System.out.println("flyway 2");
         return flyway;
     }
 }
