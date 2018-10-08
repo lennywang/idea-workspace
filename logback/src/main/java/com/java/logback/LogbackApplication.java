@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.java.logback;
 
 import org.springframework.boot.Banner;
@@ -20,3 +21,19 @@ public class LogbackApplication {
         application.run(args);
     }
 }
+=======
+package com.java.logback;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@EnableSwagger2
+public class LogbackApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(LogbackApplication.class, args);
+    }
+}
+>>>>>>> 8576b2c764adb8491cca6024cab7c1e62e87aac1

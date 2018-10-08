@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Test {
 
     @RequestMapping("Say")
-    public String Say()
-    {
+    public String Say() {
         System.out.println("Hi");
-        return  "aaa";
+        return "aaa";
     }
 }

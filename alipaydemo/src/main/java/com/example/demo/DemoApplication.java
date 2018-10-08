@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Configuration
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-		System.out.println("******************spring application*******************");
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+        System.out.println("******************spring application*******************");
+    }
 
-	@RequestMapping("hello")
-	@ResponseBody
-	public String hello(){
-		return "hello world！";
-	}
+    @RequestMapping("hello")
+    @ResponseBody
+    public String hello() {
+        return "hello world！";
+    }
 
-	@RequestMapping("hello2")
-	@ResponseBody
-	public String hello2(){
-		return "hello world！";
-	}
+    @RequestMapping("hello2")
+    @ResponseBody
+    public String hello2() {
+        return "hello world！";
+    }
 }
