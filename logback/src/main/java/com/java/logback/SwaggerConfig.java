@@ -19,15 +19,15 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(""))
+                .apis(RequestHandlerSelectors.basePackage("com.java.logback"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("Swagger Demo")
-                .description("Swagger Demo")
+                .title("RESTful APIs")
+                .description("Restful API文档")
                 .contact("Wll")
                 .version("1.0")
                 .build();

@@ -7,24 +7,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(value = "Swagger2 and Logback Hello World", description = "HelloController信息")
+@Api(value = "Swagger2 and Logback Hello World", description = "UserController信息")
 @RestController
 @RequestMapping(value = "/api/v1")
-public class HelloController {
+public class UserController {
 
-    @ApiOperation("Hello信息查询")
+    @ApiOperation("User信息查询")
     @ResponseBody
-    @RequestMapping(value = "hello", method = RequestMethod.GET)
+    @RequestMapping(value = "usersay", method = RequestMethod.GET)
     public String say() {
         return "hello";
     }
 
     @ApiOperation(value = "User信息查询")
     @ResponseBody
-    @RequestMapping(value = "/get",method = RequestMethod.GET)
+    @RequestMapping(value = "userget",method = RequestMethod.GET)
     public String get(){
         return "xiaoming";
     }
-
-
 }
