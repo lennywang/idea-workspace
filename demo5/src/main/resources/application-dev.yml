@@ -1,0 +1,6 @@
+#logging:
+#  config: classpath:conf/logback-dev.xml
+
+#  config: classpath:conf/logback-.xml
+
+#  config: classpath:logback/logback-${spring.profiles.active}.xml
