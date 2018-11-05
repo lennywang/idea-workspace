@@ -1,0 +1,16 @@
+book:
+ author: wangyunfei
+ name: spring boot
+author:
+ name: author
+ age: 32
+server:
+  port: 8080
+  servlet:
+    context-path: /helloboot
+logging:
+  level.org.springframework.web: warn
+  file: ./logs/log.log
+#spring:
+#  profiles:
+#    active: wll
