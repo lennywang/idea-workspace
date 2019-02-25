@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- 配置常量 -->
+    <!-- 字符集 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <!-- 开发模式 -->
+    <constant name="struts.devMode" value="true"></constant>
+    <!-- 主题 -->
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <!-- 扩展名 -->
+    <constant name="struts.action.extension" value="action"></constant>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="score" namespace="/" extends="struts-default">
+        <action name="getScore" class="com.ssh.service.web.ScoreAction" method="getScore">
+            <result name="success">/index.jsp</result>
+        </action>
+    </package>
+
+</struts>

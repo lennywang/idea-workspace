@@ -18,7 +18,7 @@ public class TestOrders {
     private Transaction transaction;
 
     @Before
-    public void init(){
+    public void init() {
         Configuration configuration = new Configuration().configure();//创建配置对象
         sessionFactory = configuration.buildSessionFactory();//创建会话工厂
         session = sessionFactory.openSession();//开启会话
@@ -34,21 +34,21 @@ public class TestOrders {
     }
 
     @Test
-    public void  testUser(){
+    public void testUser() {
         //Integer f1=100,f2=100,f3=150,f4=150;
 
-        //        Date currentTime = new Date();
-        //        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        //        String stime = formatter.format(currentTime);
-        //
-        //        //int id, String number, Timestamp createtime, String note
-        //        OrdersEntity userEntity = new OrdersEntity(2,"1",stime,"comment");
-        //        session.save(userEntity);//保存对象进数据库
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String stime = formatter.format(currentTime);
+
+        //int id, String number, Timestamp createtime, String note
+        OrdersEntity userEntity = new OrdersEntity(2, "1", stime, "comment");
+        session.save(userEntity);//保存对象进数据库
     }
 
     //查询
     @Test
-    public void  testUser2(){
+    public void testUser2() {
         //        String sql="select new OrdersEntity(id,number,createtime,note) from OrdersEntity where id=1";
         //        OrdersEntity entity= (OrdersEntity) session.createQuery(sql).uniqueResult();
         //        System.out.println(entity);
@@ -56,7 +56,6 @@ public class TestOrders {
     //修改
 
     //删除
-
 
 
 }
