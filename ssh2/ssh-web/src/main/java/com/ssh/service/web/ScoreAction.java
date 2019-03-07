@@ -2,7 +2,6 @@ package com.ssh.service.web;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssh.service.ScoreService;
-import com.ssh.service.ScoreService;
 import ssh.entity.ScoreEntity;
 
 public class ScoreAction extends ActionSupport {

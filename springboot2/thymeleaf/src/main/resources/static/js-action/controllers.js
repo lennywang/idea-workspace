@@ -6,8 +6,9 @@ actionApp.controller('View1Controller',['$rootScope','$scope','$http',function (
         personName=$scope.personName;
         $http.get('search',{
             params:{personName:personName}
-        }).success(function (data) {
-            $scope.person = data;
+        }).then(function (data) {
+            console.log(data);
+            $scope.person = data.data;
         })
     }
 }])

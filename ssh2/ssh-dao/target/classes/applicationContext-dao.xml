@@ -33,4 +33,7 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
+    <bean id="bookDao" class="com.ssh.dao.impl.BookDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 </beans>

@@ -8,7 +8,11 @@
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <!-- DB schema will be updated if needed -->
      <property name="hbm2ddl.auto">update</property>
-    <mapping resource="ssh/entity/ScoreEntity.hbm.xml"/>
+      <mapping resource="ssh/entity/ScoreEntity.hbm.xml"/>
     <mapping class="ssh.entity.ScoreEntity"/>
+      <mapping class="ssh.entity.BooksEntity"/>
+      <mapping resource="ssh/entity/BooksEntity.hbm.xml"/>
+      <mapping class="ssh.entity.CategoryEntity"/>
+      <mapping resource="ssh/entity/CategoryEntity.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

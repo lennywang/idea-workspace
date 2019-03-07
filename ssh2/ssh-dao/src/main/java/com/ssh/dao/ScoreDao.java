@@ -14,4 +14,5 @@ import ssh.entity.ScoreEntity;
 
 public interface ScoreDao {
  public  ScoreEntity getScoreById(Integer id);
+
 }
