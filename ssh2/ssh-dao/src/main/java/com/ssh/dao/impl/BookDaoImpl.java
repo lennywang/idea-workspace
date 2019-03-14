@@ -115,7 +115,7 @@ public class BookDaoImpl extends HibernateDaoSupport implements BookDao {
         HibernateTemplate hibernateTemplate = this.getHibernateTemplate();
         List<Object[]> list = hibernateTemplate.execute(new HibernateCallback<List<Object[]>>() {
             public List<Object[]> doInHibernate(Session session) throws HibernateException {
-                List<Object[]> list = session.createQuery("select b.categoryEntity.name,count(b.id)  from BooksEntity b group by b.CategoryEntity.name").list();
+                List<Object[]> list = session.createQuery("select b.categoryEntity.name,count(b.id)  from BooksEntity b group by b.categoryEntity.name").list();
                 return list;
             }
         });

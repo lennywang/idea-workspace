@@ -11,6 +11,6 @@
         <property name="price" column="price"/>
         <property name="pubDate" column="pubDate"/>
         <property name="categoryId" column="category_id"/>
-        <many-to-one name="categoryEntity" column="category_id" class="ssh.entity.CategoryEntity"></many-to-one>
+        <many-to-one name="categoryEntity" column="id" class="ssh.entity.CategoryEntity"></many-to-one>
     </class>
 </hibernate-mapping>
