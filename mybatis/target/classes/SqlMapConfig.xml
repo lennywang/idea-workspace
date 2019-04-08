@@ -23,9 +23,10 @@
         </environment>
     </environments>
     <mappers>
-        <!--<mapper resource="mapper/User.xml"></mapper>-->
-        <!--<mapper resource="/src/main/java/com/mybatis/mapper/UserMapper.xml"></mapper>-->
-        <!--<mapper class="com.mybatis.mapper.UserMapper"></mapper>-->
-        <mapper class="com.mybatis.mapper.UserMapper2"></mapper>
+        <!--原始Dao开发方式-->
+        <mapper resource="mapper/User.xml"></mapper>
+        <!--Mapper动态代理方式-->
+        <!--<mapper class="com.mybatis.mapper.UserMapper2"></mapper>-->
+        <!--<package name="com.mybatis.mapper"></package>-->
     </mappers>
 </configuration>

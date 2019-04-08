@@ -10,5 +10,9 @@ import com.mybatis.pojo.User;
  * @Version 1.0
  **/
 public interface UserMapper {
-    User queryUserById(int id);
+  public  User queryUserById(int id);
+
+  public User queryUserByUserName(String username);
+
+  public int saveUser(User user);
 }

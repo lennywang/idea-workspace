@@ -4,6 +4,7 @@ import org.hibernate.annotations.NamedQuery;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -14,11 +15,13 @@ import javax.persistence.Id;
  * @Date 2019/3/17 9:44
  * @Version 1.0
  **/
+
+//指定这是一个和数据表映射的实体类
 @Entity
-@NamedQuery(name = "Person.withNameAndAddressNamedQuery",query = "select p from Person p where p.name=?1 and p.address=?2")
+//@NamedQuery(name = "Person.withNameAndAddressNamedQuery",query = "select p from Person p where p.name=?1 and p.address=?2")
 public class Person {
-    @Id
-    @GeneratedValue
+    @Id//指明这个属性映射为数据库的主键
+    @GeneratedValue(strategy = GenerationType.AUTO)//注解默认使用主键生成方式为自增，Hibernate为我们自动生成一个名为HIBERBATE_SEQUENCE的序列。
     private Long id;
 
     private String name;

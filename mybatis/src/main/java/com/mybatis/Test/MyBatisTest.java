@@ -1,5 +1,6 @@
 package com.mybatis.Test;
 
+import com.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * @ClassName MyBatisTest
@@ -42,6 +45,44 @@ public class MyBatisTest {
 
         // 6. 打印结果
         System.out.println(user);
+
+        // 7. 释放资源
+        sqlSession.close();
+    }
+
+    @Test
+    public void testQueryUserByUserName() throws Exception {
+        // 4. 创建SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 5. 执行SqlSession对象执行查询，获取结果User
+        // 第一个参数是User.xml的statement的id，第二个参数是执行sql需要的参数；
+         List<User> userList = sqlSession.selectList("queryUserByUserName", "王");
+
+        // 6. 打印结果
+         for (User u : userList){
+             System.out.println(u);
+         }
+
+        // 7. 释放资源
+        sqlSession.close();
+    }
+
+    @Test
+    public void tesSaveUser() throws Exception {
+        // 4. 创建SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 5. 执行SqlSession对象执行查询，获取结果User
+        //'王路路','1989-9-13',1,'中国北京'
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy-MM-dd");
+        User user =new User("王路路234","1",simpleDateFormat.parse("1989-9-13"),"中国北京");
+
+        // 第一个参数是User.xml的statement的id，第二个参数是执行sql需要的参数；
+        Integer integer = sqlSession.insert("saveUser", user);
+
+        // 6. 打印结果
+        System.out.println(integer);
 
         // 7. 释放资源
         sqlSession.close();

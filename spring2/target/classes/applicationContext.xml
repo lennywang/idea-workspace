@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="helloWorld" class="com.spring.model.HelloWorld">
+        <property name="name" value="spring"></property>
+    </bean>
+
+    <bean id="userDao" class="com.spring.dao.impl.UserDaoImpl"></bean>
+
+    <!--bean-->
+    <!--创建方式1：空参构造方法-->
+    <bean name="user" class="com.spring.model.User" init-method="init" destroy-method="destory">
+    </bean>
+    <!--创建方式2：静态工厂创建：调用UserFactory的createUser方法创建名为user2的对象.放入容器-->
+    <bean name="user2" class="com.spring.utils.UserFactory" factory-method="createUser"></bean>
+    <!--创建方式3：实例工厂创建：调用UserFactory对象的createUser2方法创建名为user3的对象.放入容器-->
+    <bean name="user3" factory-bean="userFactory" factory-method="createUser2"></bean>
+    <bean name="userFactory" class="com.spring.utils.UserFactory"></bean>
+
+    <!--set方式注入-->
+    <bean name="user4" class="com.spring.model.User">
+        <!--值类型注入: 为User对象中名为name的属性注入tom作为值 -->
+        <property name="name" value="王路路"/>
+        <property name="age" value="30"/>
+        <!-- 引用类型注入: 为car属性注入下方配置的car对象 -->
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean name="car" class="com.spring.model.Car">
+        <property name="name" value="兰博基尼"/>
+        <property name="color" value="黄色"/>
+    </bean>
+    <!--构造函数注入-->
+    <bean name="user5" class="com.spring.model.User">
+        <!-- name属性: 构造函数的参数名 -->
+        <!-- index属性: 构造函数的参数索引 -->
+        <!-- type属性: 构造函数的参数类型-->
+        <constructor-arg name="name" index="0" type="java.lang.Integer" value="999"/>
+        <constructor-arg name="car" ref="car" index="1"/>
+    </bean>
+
+    <!-- p名称空间注入, 走set方法
+        1.导入P名称空间  xmlns:p="http://www.springframework.org/schema/p"
+        2.使用p:属性完成注入
+            |-值类型: p:属性名="值"
+            |-对象类型: p:属性名-ref="bean名称"
+     -->
+    <bean name="user6" class="com.spring.model.User" p:name="申拓" p:age="27" p:car-ref="car">
+    </bean>
+
+    <!-- 	spel注入: spring Expression Language sping表达式语言  -->
+    <bean name="user7" class="com.spring.model.User">
+        <property name="name" value="#{user4.name}"></property>
+        <property name="age" value="#{user6.age}"></property>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean name="collectionBean" class="com.spring.model.CollectionBean">
+        <property name="arr">
+            <array>
+                <value>tom</value>
+                <value>jerry</value>
+                <ref bean="user6"/>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>jack</value>
+                <value>rose</value>
+                <ref bean="user4"/>
+            </list>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="url" value="http://www.baidu.com"></entry>
+                <entry key="user" value-ref="user4"></entry>
+                <entry key-ref="user6" value-ref="user4"></entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="driverClass">com.jdbc.mysql.Driver</prop>
+                <prop key="url">jdbc:mysql://localhost:3306/test</prop>
+                <prop key="username">root</prop>
+                <prop key="password"></prop>
+            </props>
+        </property>
+    </bean>
+</beans>

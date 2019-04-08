@@ -21,52 +21,62 @@ import java.util.List;
 @RestController
 public class DataController {
 
-    @Autowired
+
+    @Autowired//1 Spring Data JPA已自动为你注册bean，所以可自动注入
     PersonDao personDao;
 
+
+    @RequestMapping("/i")
+    public String index() {
+        return "idx";
+    }
+
+    /**
+     * @return com.springdata.domain.Person
+     * @Author chengpunan
+     * @Description //TODO
+     * @Date2019/3/22 21:02
+     * @Param [name, address, age]
+     **/
     @RequestMapping("/save")
-    public Person save(String name,String address,Integer age){
-        Person person= personDao.save(new Person(null,name,age,address));
+    public Person save(String name, String address, Integer age) {
+        Person person = personDao.save(new Person(null, name, age, address));
         return person;
     }
 
     @RequestMapping("/q1")
-    public List<Person> ql(String address){
-        List<Person> list=personDao.findByAddress(address);
+    public List<Person> ql(String address) {
+        List<Person> list = personDao.findByAddress(address);
         return list;
     }
 
-    @RequestMapping("/q2")
-    public Person q2(String name,String address)
-    {
-        Person person=personDao.findByNameAndAddress(name,address);
-        return person;
-    }
-
-    @RequestMapping("/q3")
-    public Person q3(String name,String address)
-    {
-        Person person=personDao.withNameAndAddressQuery(name, address);
-        return  person;
-    }
-
-    @RequestMapping("/q4")
-    public Person q4(String name,String address)
-    {
-        Person person=personDao.withNameAndAddressNamedQuery(name, address);
-        return  person;
-    }
+    //    @RequestMapping("/q2")
+    //    public Person q2(String name, String address) {
+    //        Person person = personDao.findByNameAndAddress(name, address);
+    //        return person;
+    //    }
+    //
+    //    @RequestMapping("/q3")
+    //    public Person q3(String name, String address) {
+    //        Person person = personDao.withNameAndAddressQuery(name, address);
+    //        return person;
+    //    }
+    //
+    //    @RequestMapping("/q4")
+    //    public Person q4(String name, String address) {
+    //        Person person = personDao.withNameAndAddressNamedQuery(name, address);
+    //        return person;
+    //    }
 
     @RequestMapping("/sort")
-    public List<Person> sort(){
-        List<Person> people =personDao.findAll(new Sort(Sort.Direction.ASC,"age"));
-        return  people;
+    public List<Person> sort() {
+        List<Person> people = personDao.findAll(new Sort(Sort.Direction.ASC, "age"));
+        return people;
     }
 
     @RequestMapping("/page")
-    public Page<Person>page()
-    {
-        Page<Person> pagePeople=personDao.findAll(new PageRequest(1,2));
+    public Page<Person> page() {
+        Page<Person> pagePeople = personDao.findAll(new PageRequest(0, 2));
         return pagePeople;
     }
 }

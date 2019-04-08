@@ -7,4 +7,23 @@
     <select id="queryUserById" parameterType="int" resultType="com.mybatis.pojo.User">
         SELECT * FROM `user` where id =#{id};
     </select>
+
+    <select id="queryUserByUserName" parameterType="string" resultType="com.mybatis.pojo.User">
+        SELECT * FROM `user` WHERE username LIKE '%${value}%';
+    </select>
+
+    <insert id="saveUser" parameterType="com.mybatis.pojo.User">
+        <selectKey keyProperty="id" keyColumn="id" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user(username,birthday,sex,address) VALUES(#{username},#{birthday},#{sex},#{address});
+    </insert>
+
+
+    <!--namespace-->
+    <!--${value}-->
+    <!--parameterType-->
+    <!--resultType-->
+
+
 </mapper>

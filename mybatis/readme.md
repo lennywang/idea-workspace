@@ -10,3 +10,11 @@ https://blog.csdn.net/formydream111/article/details/84329877
 
 IDEA中快速添加main、System方法
 https://blog.csdn.net/wangpengzhi19891223/article/details/78950047
+
+Idea中maven环境下搭建MyBatis项目（一）
+https://www.cnblogs.com/alexanderthegreat/p/7583529.html
+
+BUG:
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.mybatis.mapper.
+https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html#undefined
+

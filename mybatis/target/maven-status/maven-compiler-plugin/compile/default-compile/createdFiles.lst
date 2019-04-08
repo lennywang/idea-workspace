@@ -1,0 +1,12 @@
+com\mybatis\util\SessionFactoryUtil.class
+com\mybatis\mapper\UserMapper.class
+com\mybatis\pojo\User.class
+com\mybatis\pojo\Product.class
+com\mybatis\Test\MyBatisMapperTest.class
+com\mybatis\dao\UserDao.class
+com\mybatis\mapper\UserMapper2.class
+com\mybatis\Test\MyBatisTest.class
+com\mybatis\Test\JDBCTest.class
+com\mybatis\dao\UserDaoImpl.class
+com\mybatis\dao\IProdDAOImpl.class
+com\mybatis\dao\IProdDAO.class
