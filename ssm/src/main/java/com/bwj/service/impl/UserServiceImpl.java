@@ -5,7 +5,7 @@ import com.bwj.model.User;
 import com.bwj.service.IUserService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resources;
+import javax.annotation.Resource;
 
 /**
  * @ClassName UserServiceImpl
@@ -17,7 +17,7 @@ import javax.annotation.Resources;
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 
-    @Resources
+    @Resource
     private IUserDao userDao;
 
     @Override
