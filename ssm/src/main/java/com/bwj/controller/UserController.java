@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.parser.Entity;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * @ClassName UserController
@@ -37,4 +42,35 @@ public class UserController {
         response.getWriter().write(mapper.writeValueAsString(user));
         response.getWriter().close();
     }
+
+
+    @RequestMapping("/traversalHashMap")
+    public void TraversalHashMap()
+    {
+
+       HashMap hashMap =getHashMap();
+       Iterator<Map.Entry<String,String>> iterator= hashMap.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String,String> map = iterator.next();
+            System.out.println("key: "+map.getKey()+" ====== value: "+map.getValue());
+        }
+    }
+
+    public HashMap<String,String> getHashMap()
+    {
+        HashMap<String,String> hashMap=new LinkedHashMap<String, String>();
+        hashMap.put("1","2019-4-13");
+        hashMap.put("2","2019-4-12");
+        hashMap.put("3","2019-4-15");
+        hashMap.put("4","2019-4-16");
+        hashMap.put("5","2019-4-17");
+
+        hashMap.put("7","2019-4-19");
+        hashMap.put("6","2019-4-18");
+        hashMap.put("9","2019-4-21");
+        hashMap.put("8","2019-4-20");
+
+        return hashMap;
+    }
+
 }

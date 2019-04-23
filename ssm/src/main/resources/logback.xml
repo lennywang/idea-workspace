@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration debuger="true">
+
+    <property name="log.base" value="/local/logs" />
+    <property name="log.moduleName" value="dubbo-provider" />
     <appender name="STDOUT" class="ch.qos.logback.core.FileAppender">
+        <File>${log.base}/${log.moduleName}.log</File>
         <encoder>
             <pattern>$d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
