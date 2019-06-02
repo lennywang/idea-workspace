@@ -1,0 +1,25 @@
+
+bbbbbbbb
+b::::::b                                                    jjjj
+b::::::b                                                   j::::j
+b::::::b                                                    jjjj
+ b:::::b
+ b:::::bbbbbbbbb wwwwwww           wwwww           wwwwwwwjjjjjjj
+ b::::::::::::::bbw:::::w         w:::::w         w:::::w j:::::j
+ b::::::::::::::::bw:::::w       w:::::::w       w:::::w   j::::j
+ b:::::bbbbb:::::::bw:::::w     w:::::::::w     w:::::w    j::::j
+ b:::::b    b::::::b w:::::w   w:::::w:::::w   w:::::w     j::::j
+ b:::::b     b:::::b  w:::::w w:::::w w:::::w w:::::w      j::::j
+ b:::::b     b:::::b   w:::::w:::::w   w:::::w:::::w       j::::j
+ b:::::b     b:::::b    w:::::::::w     w:::::::::w        j::::j
+ b:::::bbbbbb::::::b     w:::::::w       w:::::::w         j::::j
+ b::::::::::::::::b       w:::::w         w:::::w          j::::j
+ b:::::::::::::::b         w:::w           w:::w           j::::j
+ bbbbbbbbbbbbbbbb           www             www            j::::j
+                                                           j::::j
+                                                 jjjj      j::::j
+                                                j::::jj   j:::::j
+                                                j::::::jjj::::::j
+                                                 jj::::::::::::j
+                                                   jjj::::::jjj
+                                                      jjjjjj

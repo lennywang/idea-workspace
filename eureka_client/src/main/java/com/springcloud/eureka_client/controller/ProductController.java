@@ -1,0 +1,35 @@
+package com.springcloud.eureka_client.controller;
+
+import com.springcloud.eureka_client.domain.Product;
+import com.springcloud.eureka_client.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+/**
+ * @ClassName ProductController
+ * @Description TODO
+ * @Author wll
+ * @Date 2019/6/2 21:37
+ * @Version 1.0
+ **/
+@RestController
+@RequestMapping("/api/v1")
+public class ProductController {
+
+    @Autowired
+    private ProductService productService;
+
+    @RequestMapping("list")
+    public List<Product> list(){
+        return productService.list();
+    }
+
+    @RequestMapping("findById")
+    public Product findById(@RequestParam("id") int id){
+        return productService.findById(id);
+    }
+}

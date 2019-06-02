@@ -1,0 +1,16 @@
+2019-05-04 18:24:12.841  INFO 21420 --- [main] c.bwj.springboot.SpringbootApplication   : Starting SpringbootApplication on 王路路的计算机 with PID 21420 (started by wll in D:\Program Data\IdeaProjects\springboot8)
+2019-05-04 18:24:12.845  INFO 21420 --- [main] c.bwj.springboot.SpringbootApplication   : No active profile set, falling back to default profiles: default
+2019-05-04 18:24:14.112  INFO 21420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2019-05-04 18:24:14.145  INFO 21420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-04 18:24:14.146  INFO 21420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-04 18:24:14.347  INFO 21420 --- [main] o.a.c.c.C.[.[localhost].[/helloboot]     : Initializing Spring embedded WebApplicationContext
+2019-05-04 18:24:14.347 DEBUG 21420 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-04 18:24:14.348  INFO 21420 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1440 ms
+2019-05-04 18:24:14.486 DEBUG 21420 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-04 18:24:14.617  INFO 21420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-04 18:24:14.646 DEBUG 21420 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-05-04 18:24:14.718 DEBUG 21420 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2019-05-04 18:24:14.729 DEBUG 21420 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-04 18:24:14.741 DEBUG 21420 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-04 18:24:14.929  INFO 21420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path '/helloboot'
+2019-05-04 18:24:14.934  INFO 21420 --- [main] c.bwj.springboot.SpringbootApplication   : Started SpringbootApplication in 2.736 seconds (JVM running for 4.622)
