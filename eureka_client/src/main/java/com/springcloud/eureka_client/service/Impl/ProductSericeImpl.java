@@ -2,6 +2,8 @@ package com.springcloud.eureka_client.service.Impl;
 
 import com.springcloud.eureka_client.domain.Product;
 import com.springcloud.eureka_client.service.ProductService;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +20,9 @@ import java.util.List;
  **/
 @Service
 public class ProductSericeImpl implements ProductService {
+
+    @Value("${server.port}")
+    private String port;
 
     static final HashMap<Integer,Product> dataHashMap =new HashMap<Integer, Product>();
 
@@ -46,6 +51,15 @@ public class ProductSericeImpl implements ProductService {
 
     @Override
     public Product findById(Integer id) {
-        return dataHashMap.get(id);
+        Product product =dataHashMap.get(id);
+
+        //复制 Product 对象
+        Product p = new Product();
+        BeanUtils.copyProperties(product,p);
+        String produceName=p.getName();
+        produceName=String.format("%s from port:%s",produceName,port);
+        p.setName(produceName);
+
+        return p;
     }
 }

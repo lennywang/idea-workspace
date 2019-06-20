@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName ProductController
@@ -17,7 +18,7 @@ import java.util.List;
  * @Version 1.0
  **/
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/product")
 public class ProductController {
 
     @Autowired
@@ -30,6 +31,11 @@ public class ProductController {
 
     @RequestMapping("findById")
     public Product findById(@RequestParam("id") int id){
+        try {
+            TimeUnit.MILLISECONDS.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return productService.findById(id);
     }
 }
