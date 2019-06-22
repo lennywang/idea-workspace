@@ -4,7 +4,13 @@ https://blog.csdn.net/seashouwang/article/details/80204283
 idea Spring-boot三种启动方式
 https://blog.csdn.net/azhong148/article/details/78494804/
 
+#mybatis
 nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found):
 
 Spring-boot集成Mybatis踩坑：不能找到@MapperScan标签
 https://blog.csdn.net/xlzwhq0000004/article/details/83141957
+
+
+#redis
+spring-boot-starter-data-redis新版怎么配置 max-wait ， timeout这2个属性，类型为java.time.Duratio
+https://blog.csdn.net/qq876551724/article/details/81451720
