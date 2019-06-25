@@ -24,17 +24,17 @@ public class Person  {
         this.age = age;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof Person==false) return false;
-        Person person=(Person) o;
-        return this.name.equals(person.name)&&this.age==person.age;
-    }
-
-    @Override
-    public int hashCode() {
-        return name.hashCode()+age;
-    }
+    //    @Override
+    //    public boolean equals(Object o) {
+    //        if (o instanceof Person==false) return false;
+    //        Person person=(Person) o;
+    //        return this.name.equals(person.name)&&this.age==person.age;
+    //    }
+    //
+    //    @Override
+    //    public int hashCode() {
+    //        return name.hashCode()+age;
+    //    }
 
     @Override
     public String toString() {

@@ -31,11 +31,13 @@ public class ProductController {
 
     @RequestMapping("findById")
     public Product findById(@RequestParam("id") int id){
-        try {
-            TimeUnit.MILLISECONDS.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //        try {
+        //            TimeUnit.MILLISECONDS.sleep(500);
+        //        } catch (InterruptedException e) {
+        //            e.printStackTrace();
+        //        }
+
+
         return productService.findById(id);
     }
 }

@@ -14,3 +14,11 @@ https://blog.csdn.net/xlzwhq0000004/article/details/83141957
 #redis
 spring-boot-starter-data-redis新版怎么配置 max-wait ， timeout这2个属性，类型为java.time.Duratio
 https://blog.csdn.net/qq876551724/article/details/81451720
+
+#data-structure
+Java中Collections.sort()排序详解
+https://www.cnblogs.com/learnapi/p/9003112.html
+
+Arrays.sort()排序
+https://blog.csdn.net/gaoyao99409/article/details/20359999?utm_source=blogxgwz6
+

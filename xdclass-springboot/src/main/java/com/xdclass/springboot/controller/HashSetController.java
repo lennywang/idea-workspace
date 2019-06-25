@@ -11,7 +11,7 @@ import java.util.Set;
  *
  **/
 @RestController
-@RequestMapping("/api/v1/hashset")
+@RequestMapping("/api/v1/")
 public class HashSetController {
 
     @RequestMapping("/t1")
