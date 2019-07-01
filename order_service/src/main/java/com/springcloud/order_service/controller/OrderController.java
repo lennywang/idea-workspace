@@ -27,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/api/v1/order")
 public class OrderController {
 
-
     @Autowired
     private OrderService orderService;
 
@@ -36,7 +35,7 @@ public class OrderController {
 
     @RequestMapping("save")
     @HystrixCommand(fallbackMethod = "saveOrderFail")
-    public Object save(@RequestParam("userId") int userId, @RequestParam("productId") int productId) {
+    public Object save(@RequestParam("userId") int userId, @RequestParam("productId") int productId,HttpServletRequest request) {
         Map<String, Object> data = new HashMap<>();
         data.put("code", 0);
         data.put("msg", orderService.save(userId, productId));

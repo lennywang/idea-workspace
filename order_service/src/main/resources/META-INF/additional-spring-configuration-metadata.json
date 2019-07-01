@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "execution.isolation.thread.timeoutInMilliseconds",
+      "type": "java.lang.String",
+      "description": "Description for execution.isolation.thread.timeoutInMilliseconds."
+  }
+] }
