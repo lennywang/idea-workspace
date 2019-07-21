@@ -22,3 +22,9 @@ https://www.cnblogs.com/learnapi/p/9003112.html
 Arrays.sort()排序
 https://blog.csdn.net/gaoyao99409/article/details/20359999?utm_source=blogxgwz6
 
+```
+Class<?>[] classes() default {};
+```
+
+JAVA字符串格式化-String.format()的使用
+https://www.jb51.net/article/98194.htm

@@ -1,5 +1,11 @@
 package com.xdclass.springboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 /**
@@ -10,10 +16,18 @@ public class User {
 
     private String name;
 
+    @JsonInclude(Include.NON_NULL)
+    @JsonProperty("account")
     private String phone;
 
+    @JsonFormat(
+            pattern = "yyyy-MM-dd hh:mm:ss",
+            locale = "zh",
+            timezone = "GMT+8"
+    )
     private Date datetime;
 
+    @JsonIgnore
     private int age;
 
     public User() {
