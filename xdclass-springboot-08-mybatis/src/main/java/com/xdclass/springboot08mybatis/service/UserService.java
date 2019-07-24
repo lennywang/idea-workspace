@@ -18,4 +18,6 @@ public interface UserService {
     public User update(User user);
 
     public Integer delete(Integer id);
+
+    public int addAccount();
 }

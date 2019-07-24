@@ -58,4 +58,9 @@ public class UserController {
         return JsonData.buildSuccess(integer);
     }
 
+    @RequestMapping("/add_account")
+    private JsonData addAccount(){
+        int i =userService.addAccount();
+        return JsonData.buildSuccess(i);
+    }
 }

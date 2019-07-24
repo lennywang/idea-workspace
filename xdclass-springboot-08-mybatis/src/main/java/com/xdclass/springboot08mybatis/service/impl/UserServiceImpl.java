@@ -5,7 +5,10 @@ import com.xdclass.springboot08mybatis.mapper.UserMapper;
 import com.xdclass.springboot08mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,5 +45,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer delete(Integer id) {
         return userMapper.delete(id);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public int addAccount() {
+        User user = new User();
+        user.setAge(30);
+        user.setName("事务");
+        user.setCreateTime(new Date());
+        user.setPhone("18516800306");
+        Integer i = userMapper.insert(user);
+        int a=9/0;
+
+        return i;
     }
 }
