@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPool {
     public static void main(String[] args){
         LinkedBlockingQueue<Runnable> objects = new LinkedBlockingQueue<>(20);
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 3L, TimeUnit.SECONDS, objects, new CustomPolicy());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 30, 3L, TimeUnit.SECONDS, objects, new CustomPolicy());
         threadPoolExecutor.prestartAllCoreThreads();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i <5; i++) {
             threadPoolExecutor.submit(()->{
                 try {
                     TimeUnit.SECONDS.sleep(1L);

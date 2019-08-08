@@ -1,6 +1,7 @@
 package com.xdclass.utils;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -13,8 +14,8 @@ import java.io.Reader;
 public class SqlSessionUtil {
     private static SqlSessionFactory ourSqlSessionFactory;
     private static SqlSessionFactory middleSqlSessionFactory;
-    private static final String OUR = "app";
-    private static final String MIDDLE = "middle";
+    public static final String OUR = "app";
+    public static final String MIDDLE = "middle";
 
     private static final String CONFIG_MIDDLE = "mybatis-config-middle.xml";
     private static final String CONFIG_OUR = "mybatis-config-our.xml";
@@ -42,9 +43,9 @@ public class SqlSessionUtil {
         }
     }
 
-    public static SqlSessionFactory getSqlSession(String code) {
+    public static SqlSession getSqlSession(String code) {
         if (code.equals(MIDDLE))
-            return middleSqlSessionFactory;
-        return ourSqlSessionFactory;
+            return middleSqlSessionFactory.openSession();
+        return ourSqlSessionFactory.openSession();
     }
 }
