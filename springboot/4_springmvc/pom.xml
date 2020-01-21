@@ -17,7 +17,7 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
-        <spring-framework.version>5.0.8.RELEASE</spring-framework.version>
+        <spring-framework.version>5.2.3.RELEASE</spring-framework.version>
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
     </properties>
@@ -138,7 +138,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>RELEASE</version>
+            <version>5.2.3.RELEASE</version>
         </dependency>
     </dependencies>
     <build>
